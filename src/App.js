@@ -1,5 +1,10 @@
 import {useState, useEffect} from 'react'
 import './App.css';
+// import Characters from './Characters';
+import Header from './Header';
+import EachSanrio from './EachSanrio';
+import Popular from './Popular';
+import Twin from './Twin';
 import {
   BrowserRouter,
   Routes,
@@ -7,38 +12,47 @@ import {
 } from "react-router-dom";
 
 function App() {
-  // const [newUser, setNewUser] = useState([])
+  const [rankSanrio, setRankSanrio] = useState([])
   const [allSanrio, setAllSanrio]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:4000/data')
+        fetch('http://localhost:4000/sanrio')
         .then(r=>r.json())
         .then(data=>{
             setAllSanrio(data)
-        })
+          }) },[])
+
+          useEffect(()=>{
+            fetch('http://localhost:4000/Rank90List')
+            .then(r=>r.json())
+            .then(data=>{
+                setRankSanrio(data)
+              }) },[])
 
 
-      //   function handleSubmit(addNew){
-      //     fetch('http://localhost:4000/data2',{
-      //         method:"POST",
-      //        headers:{
-      //         "Content-type" : "Apllication/json"
-      //        },  
-      //        body: JSON.stringify(addNew)  
-      //     })
-      //     .then(r=>r.json())
-      //     .then(data=>{
-      //       const newArr = [..., data]
+              function handleSubmit(newSanrio){
+                fetch("http://localhost:5555/projects",{
+                  method:"POST",
+                  headers:{
+                    "Content-Type": "Application/json"
+                  },
+                  body: JSON.stringify(newSanrio)
+                })
+                .then(r=>r.json())
+                .then(data=>{
+                  const newArr = [...allSanrio,data]
+                  setAllSanrio(newArr)
+                })
+              }
+    
 
-      //     })
-      // }
-    })
   return (
     <div className="App">
-     <img src="https://www.musubi-jp.com/blog/wp-content/uploads/2023/06/db0ada6079c47bd95a52efea0d1ac4d3.png" alt="Happy Sanrio Picnic"/>
       <BrowserRouter>
+      <Header/>
       <Routes>
-        {/* <Route path="/" element={<Login/>}/> */}
-        <Route path="/allsanrio" setAllSanrio={setAllSanrio} allSanrio={allSanrio}/>
+        <Route path='/popularity' element={<Popular rankSanrio={rankSanrio} setRankSanrio={setAllSanrio}/>}/> 
+         <Route path="/allsanrio" element={<EachSanrio allSanrio={allSanrio}/> } />
+        <Route path="/b-daytwin" element={<Twin allSanrio={allSanrio}/>}/>
       </Routes>
       </BrowserRouter>
     </div>
