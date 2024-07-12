@@ -1,5 +1,13 @@
+// import { useState } from "react";
 
 function Rank({rankingSanrio}){
+// const [search, setSearch] = useState("")
+// const searchRanked = rankingSanrio.filter((ranSanrio)=>{
+//     if(ranSanrio.name.toLowerCase().include(search)){
+//         return true 
+//     }
+//     return false 
+// })
  
     return(
         <div>

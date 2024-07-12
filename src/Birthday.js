@@ -4,7 +4,7 @@ function EachBirthday({birthday}){
   return (
     <div>
         <div  className="image">
-        <img src = {birthday.image} alt ="oh no"/>
+       {birthday.image ? <img src = {birthday.image}/> : <img></img> }
         </div>
           <div className="header">{birthday.name}</div>
           <span>

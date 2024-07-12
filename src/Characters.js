@@ -3,7 +3,7 @@ function Characters({indivSanrio}){
 return (
   <div>
         <div  className="image">
-        <img src = {indivSanrio.image} alt ="oh no"/>
+        {indivSanrio.image ? <img src = {indivSanrio.image}/> : <img></img> }
         </div>
           <div className="header">{indivSanrio.name}</div>
           <span>
