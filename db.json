@@ -1,448 +1,686 @@
 {
-    "data": [
-      
-      { 
-        "id":1,
-         "type": "character",
-        "attributes": {
-            "name": "Hello Kitty",
-            "description": "As tall as 5 apples and as heavy as three",
-            "b-day": "November 1",
-            "debut_year": "1974",
-            "image": "data:image/png;base64,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"
-        }
+  "sanrio": [
+    {
+      "id": 1,
+      "name": "Hello Kitty",
+      "description": "As tall as 5 apples and as heavy as three",
+      "b-day": "November 1",
+      "image": "https://static.zenpop.jp/images/Hello%20Kitty%20with%20Apples.png"
     },
     {
-        "id":2,
-        "type": "character",
-        "attributes": {
-            "name": "George White",
-            "description": "Hello Kitty’s papa",
-            "b-day": "June 3",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/sanrio/images/f/f1/Download.png/revision/latest?cb=20170119171511"
-        }  
+      "id": 2,
+      "name": "George White",
+      "description": "Hello Kitty’s papa",
+      "b-day": "June 3",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLorVzKrzfKoVGjP7GtULoN8KCw5aCDpoKQ&s"
     },
-    {"id":3,
-        "type": "character",
-        "attributes": {
-            "name": "Mary White",
-            "description": "Hello Kitty’s mama",
-            "b-day": "September 14",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/sanrio/images/2/2e/MaryWhite.gif/revision/latest?cb=20170122155141"
-        }  
+    {
+      "id": 3,
+      "name": "Mary White",
+      "description": "Hello Kitty’s mama",
+      "b-day": "September 14",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuQuBgWjv9iQ7ja7KWVKIF_DBuaCP06e5dnQ&s"
     },
-    {"id":4,
-        "type": "character",
-        "attributes": {
-            "name": "Mimmy White",
-            "description": "Hello Kitty’s twin sister",
-            "b-day": "November 1",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/sanrio/images/4/4e/MimmyWhite.gif/revision/latest?cb=20170119164232"
-        }  
+    {
+      "id": 4,
+      "name": "Mimmy White",
+      "description": "Hello Kitty’s twin sister",
+      "b-day": "November 1",
+      "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d9a73ab6-1282-47fd-9761-65dc6a2052b6/df7kv6s-4cec9c57-751f-428d-b45d-439af1349cb6.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q5YTczYWI2LTEyODItNDdmZC05NzYxLTY1ZGM2YTIwNTJiNlwvZGY3a3Y2cy00Y2VjOWM1Ny03NTFmLTQyOGQtYjQ1ZC00MzlhZjEzNDljYjYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.G1ahPsGkjW_k_1WlA2q-MVH_IGTJdA1XM3ZfrK3X0sk"
     },
-    {"id":5,
-        "type": "character",
-        "attributes": {
-            "name": "Anthony White",
-            "description": "Hello Kitty’s grandpa",
-            "b-day": "October 25",
-            "debut_year": "1979",
-            "image": "https://weirdspace.info/Sanrio/Graphics/AnthonyWhite.gif"
-        }  
+    {
+      "id": 5,
+      "name": "Anthony White",
+      "description": "Hello Kitty’s grandpa",
+      "b-day": "October 25",
+      "image": "https://weirdspace.info/Sanrio/Graphics/AnthonyWhite.gif"
     },
-    {"id":6,
-        "type": "character",
-        "attributes": {
-            "name": "Margaret White",
-            "description": "Hello Kitty’s grandma",
-            "b-day": "March 31",
-            "debut_year": "1979",
-            "image": "https://weirdspace.info/Sanrio/Graphics/MargaretWhite.gif"
-        }  
+    {
+      "id": 6,
+      "name": "Margaret White",
+      "description": "Hello Kitty’s grandma",
+      "b-day": "March 31",
+      "image": "https://weirdspace.info/Sanrio/Graphics/MargaretWhite.gif"
     },
-    {"id":7,
-        "type": "character",
-        "attributes": {
-            "name": "Daniel Starr",
-            "description": "Hello Kitty’s boyfriend and companion",
-            "b-day": "May 3",
-            "debut_year": "1999",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/0/05/Sanrio_Characters_Dear_Daniel_Image008.png/revision/latest?cb=20170522214217"
-        }  
+    {
+      "id": 7,
+      "name": "Daniel Starr",
+      "description": "Hello Kitty’s boyfriend and companion",
+      "b-day": "May 3",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXfE9CQgrg2Wgf8P3FEoDlhFOQghDbcWlcQA&s"
     },
-    {"id":8,
-        "type": "character",
-        "attributes": {
-            "name": "Joey",
-            "description": "Hello Kitty’s closest classmate who’s unbeatable at tag",
-            "b-day": "July 18",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/1/1f/Sanrio_Characters_Joey_Image002.gif/revision/latest?cb=20170119143029"
-        }  
+    {
+      "id": 8,
+      "name": "Joey",
+      "description": "Hello Kitty’s closest classmate who’s unbeatable at tag",
+      "b-day": "July 18",
+      "image": "https://www.sanrio.eu/wp-content/uploads/2015/07/16-200x200.png"
     },
-    {"id":9,
-        "type": "character",
-        "attributes": {
-            "name": "Tippy",
-            "description": "Strong but kindhearted bear with a crush on Hello Kitty",
-            "b-day": "November 2",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/sanrio/images/0/0e/Tippy.gif/revision/latest?cb=20170119145336"
-        }  
+    {
+      "id": 9,
+      "name": "Tippy",
+      "description": "Strong but kindhearted bear with a crush on Hello Kitty",
+      "b-day": "November 2",
+      "image": "https://cdn.shopify.com/s/files/1/0683/0194/7201/files/sub-hellokitty-tippy_240x240.png?v=1702260807"
     },
-    {"id":10,
-        "type": "character",
-        "attributes": {
-            "name": "Tracy",
-            "description": "Hello Kitty’s friend and rascally raccoon",
-            "b-day": "July 21",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/sanrio/images/3/34/Image.png/revision/latest?cb=20231101065255"
-        }  
+    {
+      "id": 10,
+      "name": "Tracy",
+      "description": "Hello Kitty’s friend and rascally raccoon",
+      "b-day": "July 21",
+      "image": "https://images.shoutwiki.com/sanrio/8/8e/Tracy.png"
     },
-    {"id":11,
-        "type": "character",
-        "attributes": {
-            "name": "Heysuke",
-            "description": "laughing while naked",
-            "b-day": "January 1",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/c/c8/Sanrio_Characters_Heysuke_Image008.png/revision/latest?cb=20170508230313"
-        }  
+    {
+      "id": 11,
+      "name": "Heysuke",
+      "description": "laughing while naked",
+      "b-day": "January 1",
+      "image": "https://i.pinimg.com/474x/29/3d/08/293d0887e8c7c2e780cf485dff7094d5.jpg"
     },
-    {"id":12,
-        "type": "character",
-        "attributes": {
-            "name": "Fifi",
-            "description": "Hello Kitty’s friend and quite a chatter box",
-            "b-day": "May 8",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/3/35/Sanrio_Characters_Thomas_Image001.png/revision/latest/thumbnail/width/360/height/360?cb=20170404010812"
-        }  
+    {
+      "id": 12,
+      "name": "Fifi",
+      "description": "Hello Kitty’s friend and quite a chatter box",
+      "b-day": "May 8",
+      "image": "https://i.pinimg.com/564x/da/93/cf/da93cf42f971d76de73356930d7ab47d.jpg"
     },
-    {"id":13,
-        "type": "character",
-        "attributes": {
-            "name": "Jodie",
-            "description": "Hello Kitty’s friend and a smart pooch who loves to study",
-            "b-day": "June 19",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/c/c3/Sanrio_Characters_Jody_Image001.png/revision/latest/thumbnail/width/360/height/360?cb=20170404040557"
-        }  
+    {
+      "id": 13,
+      "name": "Jodie",
+      "description": "Hello Kitty’s friend and a smart pooch who loves to study",
+      "b-day": "June 19",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HAWS_O_x6NYzkeJQ6RtVhtvnEBuPHWUzsoDkAuEQzLN18_Bu7aza49HO7lJ8rmJ2KRY&usqp=CAU"
     },
-    {"id":14,
-        "type": "character",
-        "attributes": {
-            "name": "Rorry",
-            "description": "Hello Kitty’s squirrel pal who shows everyone the secrets of the forest",
-            "b-day": "July 9",
-            "debut_year": "1974",
-            "image": "https://images.shoutwiki.com/sanrio/e/eb/Rory.png"
-        }  
+    {
+      "id": 14,
+      "name": "Rorry",
+      "description": "Hello Kitty’s squirrel pal who shows everyone the secrets of the forest",
+      "b-day": "July 9",
+      "image": "https://images.shoutwiki.com/sanrio/e/eb/Rory.png"
     },
-    {"id":15,
-        "type": "character",
-        "attributes": {
-            "name": "Mory",
-            "description": "A shy little mole who lives in Hello Kitty’s home",
-            "b-day": "April 17",
-            "debut_year": "1974",
-            "image": "https://images.shoutwiki.com/sanrio/0/06/Mory.png"
-        }  
+    {
+      "id": 15,
+      "name": "Mory",
+      "description": "A shy little mole who lives in Hello Kitty’s home",
+      "b-day": "April 17",
+      "image": "https://images.shoutwiki.com/sanrio/0/06/Mory.png"
     },
-    {"id":16,
-        "type": "character",
-        "attributes": {
-            "name": "Tim and Tammy",
-            "description": "Brother and sister team who seem to pop up whenever there is fun to be had",
-            "b-day": "April 15",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/8/83/Sanrio_Characters_Tim_and_Tammy_Image001.png/revision/latest?cb=20170404041244"
-        }  
+    {
+      "id": 16,
+      "name": "Tim and Tammy",
+      "description": "Brother and sister team who seem to pop up whenever there is fun to be had",
+      "b-day": "April 15",
+      "image": "https://i.ebayimg.com/images/g/nDUAAOSw6UpmH6IP/s-l400.jpg"
     },
-    {"id":17,
-        "type": "character",
-        "attributes": {
-            "name": "Judy",
-            "description": "Hello Kitty’s friend and Joey’s girlfriend",
-            "b-day": "June 8",
-            "debut_year": "1974",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/2/26/Sanrio_Characters_Judy_Image001.png/revision/latest/thumbnail/width/360/height/360?cb=20170405231125"
-        }  
+    {
+      "id": 17,
+      "name": "Judy",
+      "description": "Hello Kitty’s friend and Joey’s girlfriend",
+      "b-day": "June 8",
+      "image": "https://images.shoutwiki.com/sanrio/2/26/Judy.png"
     },
-    {"id":18,
-        "type": "character",
-        "attributes": {
-            "name": "Coro Chan",
-            "description": "An easygoing bear from Windermere in the north of England",
-            "b-day": "November 8",
-            "debut_year": "1973",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/e/e2/Sanrio_Characters_Coro_Chan_Image003.png/revision/latest?cb=20170522205156"
-        }  
+    {
+      "id": 18,
+      "name": "Coro Chan",
+      "description": "An easygoing bear from Windermere in the north of England",
+      "b-day": "November 8",
+      "image": "https://i.pinimg.com/originals/24/d6/69/24d669bb4451dd2ed9860135b0e7c8a1.jpg"
     },
-    {"id":19,
-        "type": "character",
-        "attributes": {
-            "name": "Strawberry King",
-            "description": "King of the beautiful and peaceful Strawberry Kingdom",
-            "b-day": "December 7",
-            "debut_year": "1975",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/b/b4/Sanrio_Characters_Strawberry_King_Image012.png/revision/latest?cb=20170405203901"
-        }  
+    {
+      "id": 19,
+      "name": "Strawberry King",
+      "description": "King of the beautiful and peaceful Strawberry Kingdom",
+      "b-day": "December 7",
+      "image": "https://media.entertainmentearth.com/assets/images/cc7c0533902842e2ba0768db6d5d27a3xl.jpg"
     },
-    {"id":20,
-        "type": "character",
-        "attributes": {
-            "name": "Pompompurin",
-            "description": "Pompompurin's interest is collecting shoes, which includes his owner-father's leather shoes, one of his owner-mother's sandal, etc. He likes to hide them. ",
-            "b-day": "April 16",
-            "debut_year": "1975",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/6/6c/Sanrio_Characters_Pompompurin_Image007.png/revision/latest?cb=20170401015145"
-        }  
+    {
+      "id": 20,
+      "name": "Pompompurin",
+      "description": "Pompompurin's interest is collecting shoes, which includes his owner-father's leather shoes, one of his owner-mother's sandal, etc. He likes to hide them. ",
+      "b-day": "April 16",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJl2CE2WkTCFM7bRJgLUlCcrv5xH2PiUq2UQ&s"
     },
-        {"id":21,
-        "type": "character",
-        "attributes": {
-            "name": "Tommy",
-            "description": "One of the Seven Strawberry Angels",
-            "b-day": "August 18",
-            "debut_year": "1975",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/b/b0/Tommy1.png/revision/latest?cb=20240219233159"
-        }  
+    {
+      "id": 21,
+      "name": "Luna",
+      "description": "Luna is depicted as free-spirited but a bit selfish who loves to spend time during the nighttime hours.",
+      "b-day": "June 8",
+      "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d5fbc8d8-06a1-4d6b-916e-d4059518e3ee/df18gel-79f4de3c-f446-4f56-af10-bfb11e6b28d8.png/v1/fill/w_355,h_500/luna__jewelpet__by_angelina8611_df18gel-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTAwIiwicGF0aCI6IlwvZlwvZDVmYmM4ZDgtMDZhMS00ZDZiLTkxNmUtZDQwNTk1MThlM2VlXC9kZjE4Z2VsLTc5ZjRkZTNjLWY0NDYtNGY1Ni1hZjEwLWJmYjExZTZiMjhkOC5wbmciLCJ3aWR0aCI6Ijw9MzU1In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.sj-0VIvwBE7DCKOr4Dsz7EYpIDaZGwxquyS08CMFokw"
     },
-    {"id":22,
-        "type": "character",
-        "attributes": {
-            "name": "Tuffy",
-            "description": "One of the Seven Strawberry Angels",
-            "b-day": "January 8",
-            "debut_year": "1975",
-            "image": "https://static.wikia.nocookie.net/hellokitty/images/b/bb/Toffee1.png/revision/latest?cb=20240219233415"
-        }  
+    {
+      "id": 22,
+      "name": "Peridot",
+      "description": "Peridot is depicted as a spiritual being who loves to play with butterflies.",
+      "b-day": "August 3",
+      "image": "https://images.shoutwiki.com/sanrio/9/94/Peridot_Jewelpet.png"
     },
-    {"id":23,
-        "type": "character",
-        "attributes": {
-            "name": "Candy",
-            "description": "One of the Seven Strawberry Angels",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 23,
+      "name": "Kuromi",
+      "description": "She is My Melody's rival and doppelgänger, and manifests as a white rabbit or imp-like creature wearing a black jester's hat with a pink skull on the front and a black devil's tail.",
+      "b-day": "October 31",
+      "image": "data:image/jpeg;base64,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"
     },
-    {"id":24,
-        "type": "character",
-        "attributes": {
-            "name": "Socrates",
-            "description": "One of the Seven Strawberry Angels",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 24,
+      "name": "King",
+      "description": "King is depicted as friendly and sweet who loves to walk around someone from front to back.",
+      "b-day": "August 10",
+      "image": "https://tiermaker.com/images/chart/chart/jewelpet-characters--144267/1840201original1jpg.png"
     },
-    {"id":25,
-        "type": "character",
-        "attributes": {
-            "name": "Crybaby",
-            "description": "One of the Seven Strawberry Angels",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 25,
+      "name": "Retsuko",
+      "description": "She is kind and slightly rigid, although, when drunk, she loses all mental filters and speaks her mind.",
+      "b-day": "November 6",
+      "image": "https://static01.nyt.com/images/2017/07/19/arts/19SANRIO_COMBO/19SANRIO-superJumbo.jpg"
     },
-    {"id":26,
-        "type": "character",
-        "attributes": {
-            "name": "Stinky",
-            "description": "One of the Seven Strawberry Angels",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 26,
+      "name": "Chococat",
+      "description": "He’s always up on the latest news - thanks to his ultra-sensitive `antenna` whiskers - but can be a little scatter-brained at times.",
+      "b-day": "May 10",
+      "image": "data:image/jpeg;base64,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"
     },
-    {"id":27,
-        "type": "character",
-        "attributes": {
-            "name": "My Melody",
-            "description": "Very honest, good-natured and her favorite food is almond pound cake",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 27,
+      "name": "My Melody",
+      "description": "Very honest, good-natured and her favorite food is almond pound cake",
+      "b-day": "January 18",
+      "image": "https://i.pinimg.com/736x/c9/d9/98/c9d998b69fd29d98fdfc2ba76c092818.jpg"
     },
-    {"id":28,
-        "type": "character",
-        "attributes": {
-            "name": "My Melody’s Grandpa",
-            "description": "He loves adventures",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 29,
+      "name": "Rhythm",
+      "description": "My Melody’s little brother and a bit of a rascal",
+      "b-day": "January 1",
+      "image": "https://cdn.shopify.com/s/files/1/0683/0194/7201/files/sub-mymelody-rhythm_480x480.png?v=1712913979"
     },
-    {"id":29,
-        "type": "character",
-        "attributes": {
-            "name": "My Melody’s Grandma",
-            "description": "Just about knows everything",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 30,
+      "name": "Piano",
+      "description": "My Melody’s friend who is soft, kind and girly",
+      "b-day": "July 6",
+      "image": "https://i.pinimg.com/originals/c1/aa/61/c1aa61c11d6b09836c877094d917440e.png"
     },
-    {"id":30,
-        "type": "character",
-        "attributes": {
-            "name": "Rhythm",
-            "description": "My Melody’s little brother and a bit of a rascal",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 31,
+      "name": "Hangyodon",
+      "description": "Hangyodon loves to spread joy and happiness to everyone he meets.",
+      "b-day": "March 14",
+      "image": "https://cdn.shopify.com/s/files/1/0568/2298/8958/files/hangyodon-sanrio_7_480x480.png?v=1701325686"
     },
-    {"id":31,
-        "type": "character",
-        "attributes": {
-            "name": "My Melody’s Mama",
-            "description": "Loves baking sweets and doing crafts",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 32,
+      "name": "Risu",
+      "description": "My Melody’s friend and very close with flat, also a bit shy",
+      "b-day": "March 8",
+      "image": "https://i.quotev.com/orh5cu2oqdrq.jpg"
     },
-    {"id":32,
-        "type": "character",
-        "attributes": {
-            "name": "My Melody’s Papa",
-            "description": "Gentle and strong",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 33,
+      "name": "Pekkle",
+      "description": "Pekkle is a gentle, kind-hearted boy who loves to dance; he especially enjoys tapdancing and is taking tap lessons.",
+      "b-day": "July 27",
+      "image": "https://i.pinimg.com/736x/d7/d3/fb/d7d3fbc27bcd97643b63d95a72d23504.jpg"
     },
-    {"id":33,
-        "type": "character",
-        "attributes": {
-            "name": "Kuma",
-            "description": "My Melody’s friend who's big and strong with a large appetite",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 34,
+      "name": "Little Twin Stars",
+      "description": "Kiki and Lala are two twin stars born on Omoiyari Star in the Yume Star-Cloud",
+      "b-day": "December 24",
+      "image": "https://i.pinimg.com/736x/a2/8d/2a/a28d2a857642fc65d8ad84afc0a76914.jpg"
     },
-    {"id":34,
-        "type": "character",
-        "attributes": {
-            "name": "Flat",
-            "description": "My Melody’s best friend and a little bit shy",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 35,
+      "name": "Button Nose",
+      "description": "A kind and energetic little girl, and a master strawberry jam-maker.",
+      "b-day": "January 5",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5YZ7kx_f1cEWvQNO7fDVLxUBrW2LmI8ZBvQ&s"
     },
-    {"id":35,
-        "type": "character",
-        "attributes": {
-            "name": "Piano",
-            "description": "My Melody’s friend who is soft, kind and girly",
-            "b-day": "June 3",
-            "debut_year": "2005",
-            "image": ""
-        }  
+    {
+      "id": 36,
+      "name": "Tuxedo Sam",
+      "description": "A little naïve and a bit of a blunderer, but everybody loves this personable penguin who likes to eat all the time",
+      "b-day": "May 12",
+      "image": "https://m.media-amazon.com/images/I/61MsduH365L._AC_UF894,1000_QL80_.jpg"
     },
-    {"id":36,
-        "type": "character",
-        "attributes": {
-            "name": "Hangyodon",
-            "description": "Hangyodon loves to spread joy and happiness to everyone he meets.",
-            "b-day": "March 14",
-            "debut_year": "1985",
-            "image": ""
-        }  
+    {
+      "id": 37,
+      "name": "Chip",
+      "description": "Very good friends with Tuxedosam",
+      "b-day": "October 5",
+      "image": "https://cdn.shopify.com/s/files/1/0683/0194/7201/files/Tuxedosam_chip_86e68f1e-ad61-4c48-8a60-04cbb24c80f5_240x240.png?v=1695084943"
     },
-    {"id":37,
-        "type": "character",
-        "attributes": {
-            "name": "Risu",
-            "description": "My Melody’s friend and very close with flat, also a bit shy",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 38,
+      "name": "Espresso",
+      "description": " His favorite food is Crème brûlée. Espresso has a loved blanket that he cannot sleep without.",
+      "b-day": "December 4",
+      "image": "https://i.pinimg.com/originals/a8/08/e4/a808e4d8f039cf81547fe14641923dfb.jpg"
     },
-    {"id":38,
-        "type": "character",
-        "attributes": {
-            "name": "Harinezumi",
-            "description": "My Melody’s friend and likes to chill out",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 39,
+      "name": "Ryl",
+      "description": "Ryl's magic spells can cleanse and remove any negativity from people's minds and/or their bodies. She can also calm their hearts when they are anxious.",
+      "b-day": "April 24",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5efw5YmjPOvoQRwib1eMuQSjZUNaTRn4NNTNBn5RAdlQFWHSfyn84Lv8Ou6_1JiV1_E&usqp=CAU"
     },
-    {"id":39,
-        "type": "character",
-        "attributes": {
-            "name": "Pekkle",
-            "description": "Pekkle is a gentle, kind-hearted boy who loves to dance; he especially enjoys tapdancing and is taking tap lessons.",
-            "b-day": "July 27",
-            "debut_year": "",
-            "image": ""
-        }  
+    {
+      "id": 40,
+      "name": "Deery-Lou",
+      "description": "His special skill is to make his tail wag when he is having fun. ",
+      "b-day": "December 4",
+      "image": "https://i.pinimg.com/564x/ef/e0/21/efe0219194449c830ccdd05360048bc4.jpg"
     },
-    {"id":40,
-        "type": "character",
-        "attributes": {
-            "name": "Little Twin Stars",
-            "description": "Kiki and Lala are two twin stars born on Omoiyari Star in the Yume Star-Cloud",
-            "b-day": "June 3",
-            "debut_year": "1975",
-            "image": ""
-        }  
+    {
+      "id": 41,
+      "name": "Ichigoman",
+      "description": " She's a superhero that fights monsters that were created by humans with wicked, unhappy hearts.",
+      "b-day": "January 15",
+      "image": "https://preview.redd.it/can-anyone-tell-me-about-ichigoman-v0-3djz5luif6uc1.png?auto=webp&s=c65cfff15cb1d83beea50aa9b2798f75f3e365ce"
     },
-    {"id":41,
-        "type": "character",
-        "attributes": {
-            "name": "Button Nose",
-            "description": "A kind and energetic little girl, and a master strawberry jam-maker.",
-            "b-day": "June 3",
-            "debut_year": "1978",
-            "image": ""
-        }  
+    {
+      "id": 42,
+      "name": "Marroncream",
+      "description": "This little rabbit girl is cheerful and optimistic and has a lovely fashion sense. She is also good at handicrafts and making delicious sweets.  ",
+      "b-day": "May 31",
+      "image": "https://i.pinimg.com/1200x/44/f2/d9/44f2d9aecdab58780367838d496989ed.jpg"
     },
-    {"id":42,
-        "type": "character",
-        "attributes": {
-            "name": "Tuxedosam",
-            "description": "A little naïve and a bit of a blunderer, but everybody loves this personable penguin who likes to eat all the time",
-            "b-day": "June 3",
-            "debut_year": "1979",
-            "image": ""
-        }  
+    {
+      "id": 43,
+      "name": "LLOROMANNIC",
+      "description": "Together, they live in an abandoned western-style, gothic mansion, possibly once owned by Espriana's family.",
+      "b-day": "June 6",
+      "image": "https://www.sanrio.com.hk/_ul/character_profile_lloromannic.png"
     },
-    {"id":43,
-        "type": "character",
-        "attributes": {
-            "name": "Chip",
-            "description": "Very good friends with Tuxedosam",
-            "b-day": "October 5",
-            "debut_year": "1979",
-            "image": ""
-        }  
+    {
+      "id": 44,
+      "name": "",
+      "description": "",
+      "b-day": "",
+      "Ranking": "",
+      "rankimg": "",
+      "image": ""
     },
-    {"id":44,
-        "type": "character",
-        "attributes": {
-            "name": "Espresso",
-            "description": "",
-            "b-day": "December 4",
-            "debut_year": "1979",
-            "image": ""
-        }  
+    {
+      "id": 45,
+      "name": "",
+      "description": "",
+      "b-day": "",
+      "Ranking": "",
+      "rankimg": "",
+      "image": ""
+    },
+    {
+      "id": 46,
+      "name": "",
+      "description": "",
+      "b-day": "",
+      "Ranking": "",
+      "rankimg": "",
+      "image": ""
+    },
+    {
+      "id": 47,
+      "name": "",
+      "description": "",
+      "b-day": "",
+      "Ranking": "",
+      "rankimg": "",
+      "image": ""
     }
-
-    ] 
+  ],
+  "Rank90List": [
+    {
+      "id": 1,
+      "name": "Cinnamoroll",
+      "Ranking": "1",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/cinnamon/img_chara3.png"
+    },
+    {
+      "id": 2,
+      "name": "Pompompurin",
+      "Ranking": "2",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/pompompurin/img_chara3.png"
+    },
+    {
+      "id": 3,
+      "name": "Kuromi",
+      "Ranking": "3",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/kuromi/img_chara3.png"
+    },
+    {
+      "id": 4,
+      "name": "Pochacco",
+      "Ranking": "4",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/pochacco/img_chara3.png"
+    },
+    {
+      "id": 5,
+      "name": "Hello Kitty",
+      "Ranking": "5",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/hellokitty/img_chara3.png"
+    },
+    {
+      "id": 6,
+      "name": "My Melody",
+      "Ranking": "6",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/mymelody/img_chara3.png"
+    },
+    {
+      "id": 7,
+      "name": "Hangyodon",
+      "Ranking": "7",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/hangyodon/img_chara3.png"
+    },
+    {
+      "id": 8,
+      "name": "Little Twin Stars",
+      "Ranking": "8",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/kikilala/img_chara3.png"
+    },
+    {
+      "id": 9,
+      "name": "Tuxedo Sam",
+      "Ranking": "9",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/tuxedosam/img_chara3.png"
+    },
+    {
+      "id": 10,
+      "name": "Bad Badtz-Maru",
+      "Ranking": "10",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/badtzmaru/img_chara3.png"
+    },
+    {
+      "id": 11,
+      "name": "Cogimyun",
+      "Ranking": "11",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/cogimyun/img_chara1.png"
+    },
+    {
+      "id": 12,
+      "name": "Kerokerokeroppi",
+      "Ranking": "12",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/keroppi/img_chara1.png"
+    },
+    {
+      "id": 13,
+      "name": "Gudetama",
+      "Ranking": "13",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/gudetama/img_chara1.png"
+    },
+    {
+      "id": 14,
+      "name": "Jochum",
+      "Ranking": "14",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/jochum/img_chara1.png"
+    },
+    {
+      "id": 15,
+      "name": "Wish Me Well",
+      "Ranking": "15",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/wishmemell/img_chara1.png"
+    },
+    {
+      "id": 16,
+      "name": "Pekkle",
+      "Ranking": "16",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/pekkle/img_chara1.png"
+    },
+    {
+      "id": 17,
+      "name": "Kirimichan",
+      "Ranking": "17",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/kirimichan/img_chara1.png"
+    },
+    {
+      "id": 18,
+      "name": "Piano",
+      "Ranking": "18",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/mysweetpiano/img_chara1.png"
+    },
+    {
+      "id": 19,
+      "name": "Show By Rock",
+      "Ranking": "19",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/showbyrock/img_chara1.png"
+    },
+    {
+      "id": 20,
+      "name": "Corocorokuririn",
+      "Ranking": "20",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/kuririn/img_chara1.png"
+    },
+    {
+      "id": 21,
+      "name": "Yoshikitty",
+      "Ranking": "21",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/yoshikitty/img_chara1.png"
+    },
+    {
+      "id": 22,
+      "name": "Marumofubiyori",
+      "Ranking": "22",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/marumofubiyori/img_chara1.png"
+    },
+    {
+      "id": 23,
+      "name": "U・SA・HA・NA",
+      "Ranking": "23",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/usahana/img_chara1.png"
+    },
+    {
+      "id": 24,
+      "name": "Gaopowerroo",
+      "Ranking": "24",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/gaopowerroo/img_chara1.png"
+    },
+    {
+      "id": 25,
+      "name": "Kabukinyantaro",
+      "Ranking": "25",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/kabukinyantaro/img_chara1.png"
+    },
+    {
+      "id": 26,
+      "name": "Marroncream",
+      "Ranking": "26",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/marroncream/img_chara1.png"
+    },
+    {
+      "id": 27,
+      "name": "Minnanotabo",
+      "Ranking": "27",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/tabo/img_chara1.png"
+    },
+    {
+      "id": 28,
+      "name": "Lloromannic",
+      "Ranking": "28",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/lloromannic/img_chara1.png"
+    },
+    {
+      "id": 29,
+      "name": "Daniel Starr",
+      "Ranking": "29",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/daniel/img_chara1.png"
+    },
+    {
+      "id": 30,
+      "name": "Charmmykitty",
+      "Ranking": "30",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/charmmy/img_chara1.png"
+    },
+    {
+      "id": 31,
+      "name": "Mimmy White",
+      "Ranking": "31",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/hellomimmy/img_chara1.png"
+    },
+    {
+      "id": 23,
+      "name": "Jewelpet",
+      "Ranking": "32",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/jewelpet/img_chara1.png"
+    },
+    {
+      "id": 33,
+      "name": "SugarBunnies",
+      "Ranking": "33",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/sugarbunnies/img_chara1.png"
+    },
+    {
+      "id": 34,
+      "name": "Maimaimaigoen",
+      "Ranking": "34",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/maimaimaigoen/img_chara1.png"
+    },
+    {
+      "id": 35,
+      "name": "nya・ni・nyu・nye・nyon",
+      "Ranking": "35",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/nyaninyunyenyon/img_chara1.png"
+    },
+    {
+      "id": 36,
+      "name": "Goropikadon",
+      "Ranking": "36",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/goropikadon/img_chara1.png"
+    },
+    {
+      "id": 37,
+      "name": "Aggretsuko",
+      "Ranking": "37",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/retsuko/img_chara1.png"
+    },
+    {
+      "id": 38,
+      "name": "Osarunomonkichi",
+      "Ranking": "38",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/monkichi/img_chara1.png"
+    },
+    {
+      "id": 39,
+      "name": "Bonbonribbon",
+      "Ranking": "39",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/bonbonribbon/img_chara1.png"
+    },
+    {
+      "id": 40,
+      "name": "LittleForestFellow",
+      "Ranking": "40",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/littleforestfellow/img_chara1.png"
+    },
+    {
+      "id": 41,
+      "name": "Patty&Jimmy",
+      "Ranking": "41",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/pattyandjimmy/img_chara1.png"
+    },
+    {
+      "id": 42,
+      "name": "Cherry Chums",
+      "Ranking": "42",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/cheerychums/img_chara1.png"
+    },
+    {
+      "id": 43,
+      "name": "Pokkyokuten",
+      "Ranking": "43",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/pokkyokuten/img_chara1.png"
+    },
+    {
+      "id": 44,
+      "name": "Tiny Chum",
+      "Ranking": "44",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/tinychum/img_chara1.png"
+    },
+    {
+      "id": 45,
+      "name": "Hagurumanstyle",
+      "Ranking": "45",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/hagurumanstyle/img_chara1.png"
+    },
+    {
+      "id": 46,
+      "name": "Mewkledreamy",
+      "Ranking": "46",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/mewkledreamy/img_chara1.png"
+    },
+    {
+      "id": 47,
+      "name": "PataPataPeppy",
+      "Ranking": "47",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/patapatapeppy/img_chara1.png"
+    },
+    {
+      "id": 48,
+      "name": "Beatcats",
+      "Ranking": "48",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/beatcats/img_chara1.png"
+    },
+    {
+      "id": 49,
+      "name": "Marshmallowmitainafuwafuwanyanko",
+      "Ranking": "49",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/masyumaro/img_chara1.png"
+    },
+    {
+      "id": 50,
+      "name": "Paupipo",
+      "Ranking": "50",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/paupipo/img_chara1.png"
+    },
+    {
+      "id": 59,
+      "name": "Strawberry King",
+      "Ranking": "59",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/strawberryking/img_chara1.png"
+    },
+    {
+      "id": 62,
+      "name": "Ichigoman",
+      "Ranking": "62",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/ichigoman/img_chara1.png"
+    },
+    {
+      "id": 84,
+      "name": "Button Nose",
+      "Ranking": "84",
+      "rankimg": "https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/buttonnose/img_chara1.png"
+    },
+    {
+      "id": 23,
+      "name": "",
+      "Ranking": "",
+      "rankimg": ""
+    },
+    {
+      "id": 23,
+      "name": "",
+      "Ranking": "",
+      "rankimg": ""
+    },
+    {
+      "id": 32,
+      "name": "",
+      "Ranking": "",
+      "rankimg": ""
+    }
+  ],
+  "holiday": [
+    {
+      "id": 1,
+      "himg": "",
+      "feeling": "",
+      "favSanrio": ""
+    },
+    {
+      "id": "7d1f",
+      "himg": "https://www.inspireuplift.com/resizer/?image=https://cdn.inspireuplift.com/uploads/images/seller_products/1692449360_Pumpkin-Sanrio-Characters-preview.jpg&width=600&height=600&quality=90&format=auto&fit=pad",
+      "feeling": "Scared ",
+      "favSanrio": "Cinnanom"
+    }
+  ]
 }
